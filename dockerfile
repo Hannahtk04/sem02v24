@@ -13,17 +13,17 @@ RUN useradd -G sudo -m -d /home/BRUKER -s /bin/bash -p "$(openssl passwd -1 1234
 USER hannahtk04
 WORKDIR /home/hannahtk04
 RUN mkdir hacking \
-&& cd hacking \
-&& curl -SL https://raw.githubusercontent.com/uia-worker/is105misc/master/sem01v24/pawned.sh > pawned.sh \
-&& chmod 764 pawned.sh \
-&& cd ..
+ && cd hacking \
+ && curl -SL https://raw.githubusercontent.com/uia-worker/is105misc/master/sem01v24/pawned.sh > pawned.sh \
+ && chmod 764 pawned.sh \
+ && cd ..
 RUN git config --global user.email "hannahtorstveitklavenes@gmail.com"\
-&& git config --global user.name "Hannahtk04" \
-&& git config --global url."https://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:@github.com/".insteadOf"https://github.com" \
-&& mkdir -p github.com/GITHUB-hannahtk04
+ && git config --global user.name "Hannahtk04" \
+ && git config --global url."https://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:@github.com/".insteadOf"https://github.com" \
+ && mkdir -p github.com/GITHUB-hannahtk04
 USER root
-RUN curl -SL https://go.dev/dl/go1.21.7.OS-ARCH.tar.gz \
-| tar xvz -C /usr/local
+RUN curl -SL https://go.dev/dl/go1.21.7.linux-arm64.tar.gz \
+ | tar xvz -C /usr/local
 USER hannahtk04
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p $HOME/go/{src,bin}
