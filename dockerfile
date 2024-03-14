@@ -20,7 +20,7 @@ RUN mkdir hacking \
 RUN git config --global user.email "hannahtorstveitklavenes@gmail.com"\
  && git config --global user.name "Hannahtk04" \
  && git config --global url."https://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:@github.com/".insteadOf"https://github.com" \
- && mkdir -p github.com/GITHUB-hannahtk04
+ && mkdir -p github.com/hannahtk04
 USER root
 RUN curl -SL https://go.dev/dl/go1.21.7.linux-arm64.tar.gz \
  | tar xvz -C /usr/local
