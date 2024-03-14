@@ -29,6 +29,7 @@ RUN git config --global user.email "hannahtorstveitklavenes@gmail.com"\
  && git config --global url."https://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:@github.com/".insteadOf"https://github.com" \
  && mkdir -p github.com/hannahtk04
 USER root
+ARG DEBIAN_FRONTEND=noninteractive
 RUN curl -SL https://go.dev/dl/go1.21.7.linux-arm64.tar.gz \
  | tar xvz -C /usr/local
 USER hannahtk04
